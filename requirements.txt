@@ -6,7 +6,6 @@ matplotlib==3.4.3
 ta==0.7.0
 # finrl==0.3.3
 tensortrade==1.0.3
-finrl==0.3.3
 ray==1.8.0
 statsmodels==0.13.1
 pandas-ta==0.3.14b
