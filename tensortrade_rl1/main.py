@@ -79,7 +79,7 @@ def setup_feed(df: pd.DataFrame) -> DataFeed:
     # model_fit = forecast_model.fit(method='bfgs', disp=False)
     # forecast = model_fit.get_forecast(steps=self.n_forecasts, alpha=self.arma_alpha)
 
-    df = df[OHLCV_COLUMNS]
+    df = df[OHLCV_COLUMNS+INDICATORS]
     # df = df.pct_change()
     # df = np.log(df)
     # df = df.diff()
@@ -128,7 +128,7 @@ def train():
 
 def main():
     assert MODE == 'train'
-    ray.init()
+    ray.init(object_store_memory=1000 * 1024 * 1024)
     register_env(ENV_NAME, create_env)
     train()
 
